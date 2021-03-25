@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ejemplo Basico</title>
+
+    <style type="text/css">
+      html,
+      body,
+      #mynetwork {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      #mynetwork {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        bottom: 0px;
+        right: 0%;
+        min-height: 100vh;
+        border-right: 1px solid lightgray;
+        background: white;
+      }
+
+      #text {
+        position: absolute;
+        left: 50%;
+        padding: 1em;
+      }
+
+      #title {
+        margin-bottom: 5em;
+      }
+    </style>
+
+    <script
+      type="text/javascript"
+      src="js/CopyNetwork.js"
+    ></script>
+  </head>
+
+  <body>
+ 
+    
+    <div id="mynetwork"></div>
+    <script type="text/javascript">
+     var directionInput = "DU"
+      // create an array with nodes
+      var nodes = new vis.DataSet([
+  
+  //nodo raiz
+  {id:0,level:0,label:"Raiz",hidden:true},
+        //temas iniciales o principales
+  {id: 1,level:1, label: "Mantenimiento de software\n57%", hidden: false,shape: "box" , fixed: true ,color: {background: "#7BC4F6",border: "#7BC4F6",hover: { background: "#58B6F6", border: "#239EF2" },}}, 
+  {id: 2,level:1, label: "Rediseño y patrones de diseño\n50%",shape: "box" , fixed: true, hidden: false,color: {background: "#7BC4F6",border: "#7BC4F6"}}, 
+  {id: 3,level:1, label: "Proyectos",shape: "box" , fixed: true,  hidden: false},
+  {id: 4,level:1, label: "Metodos Ágiles",shape: "box" , fixed: true,  hidden: false},
+
+//son 4 subtemas de el item Mantenimiento con id 1
+  {id: 101,level:2, label: "Mantenimiento\n100%",shape: "box" ,  hidden: true,color:{background:"#0098FF"}},
+  {id: 102,level:2, label: "Analisis estatico\n80%",shape: "box" ,  hidden: true,color:{background:"#45B4FF"}},
+  {id: 103,level:2, label: "Refactorizacion\n50%",shape: "box" ,  hidden: true,color:{background:"#78C9FF"}},
+  {id: 104,level:2, label: "Metricas\n0%",shape: "box" ,  hidden: true,color:{background:"#D3EDFF"}},
+
+  //dos subtemas de REDISEÑO Y PATRONES DE DISEÑO
+  {id: 201,level:2, label: "Principios de diseño\n100%",shape: "box" ,  hidden: true,color:{background:"#0098FF"}},
+  {id: 202,level:2, label: "Patrones de diseño\n0%",shape: "box" ,  hidden: true,color:{background:"#D3EDFF"}},
+
+  // temas individuales de los Proyectos
+  {id: 301,level:2, label: "Grupos de proyecto",shape: "box" ,  hidden: true},
+  {id: 302,level:2, label: "Primer proyecto: Mantenimiento",shape: "box" ,  hidden: true},
+  {id: 303,level:2, label: "Formato de plan de tareas de mantenimiento",shape: "box" ,  hidden: true},
+  {id: 304,level:2, label: "Grupos de proyecto",shape: "box" ,  hidden: true},
+
+  //temas individuales de Metodo Ágiles
+  {id: 401,level:2, label: "Metodos Ágiles",shape: "box" ,  hidden: true},
+  {id: 402,level:2, label: "Historias de usuarios",shape: "box" ,  hidden: true},
+ 
+  
+//--------------------------------
+  //temas especificos Mantenimiento de software/Mantenimiento
+  {id: 1011,level:3, label: "Lista de chequeo de lectura\n100%",shape: "box" ,  hidden: true},
+  {id: 1012,level:3, label: "material sobre mantenimiento de software\n100%",shape: "box" ,  hidden: true},
+  {id: 1013,level:3, label: "preguntas sobre mantenimiento\n100%",shape: "box" ,  hidden: true},
+  {id: 1014,level:3, label: "taller mantenimiento\n100%",shape: "box" ,  hidden: true},
+  {id: 1015,level:3, label: "Documento/apoyo\n100%",shape: "box" ,  hidden: true},
+
+    //temas especificos Mantenimiento de software/Análisis estático de código
+  {id: 1021,level:3, label: "Lista de chequeo de lectura\n100%",shape: "box" ,  hidden: true},
+  {id: 1022,level:3, label: "Presentación Análisis estático de código\n100%",shape: "box" ,  hidden: true},
+  {id: 1023,level:3, label: "Video Análisis Estático de Código\n100%",shape: "box" ,  hidden: true},
+  {id: 1024,level:3, label: "Apuntes sobre Análisis estático\n100%",shape: "box" ,  hidden: true},
+  {id: 1025,level:3, label: "Taller Análisis Estático de Código\n100%",shape: "box" ,  hidden: true},
+
+      //temas especificos Mantenimiento de software/Refactorizacion
+  {id: 1031,level:3, label: "Lista de chequeo de lectura - Refactorización\n100%",shape: "box" ,  hidden: true},
+  {id: 1032,level:3, label: "Presentación Malos olores de código\n100%",shape: "box" ,  hidden: true},
+  {id: 1033,level:3, label: "Video Malos Olores del Código\n100%",shape: "box" ,  hidden: true},
+  {id: 1034,level:3, label: "Presentación Refactorización\n100%",shape: "box" ,  hidden: true},
+  {id: 1035,level:3, label: "Enlace a un catálogo de malos olores de código\n100%",shape: "box" ,  hidden: true},
+  {id: 1036,level:3, label: "Enlace al catálogo de refactorizaciones\n100%",shape: "box" ,  hidden: true},
+  {id: 1037,level:3, label: "Taller Refactorización\n100%",shape: "box" ,  hidden: true},
+  {id: 1038,level:3, label: "Taller Refactorización 2\n100%",shape: "box" ,  hidden: true},
+
+
+  //temas especificos Mantenimiento de software/Refactorizacion
+  {id: 1041,level:3, label: "ista de chequeo de lectura - Métricas básicas de código\n100%",shape: "box" ,  hidden: true},
+  {id: 1042,level:3, label: "Material sobre métricas básicas (de código)Archivo\n100%",shape: "box" ,  hidden: true},
+  {id: 1043,level:3, label: "Taller Métricas básicas de código\n100%",shape: "box" ,  hidden: true},
+
+
+
+]);
+
+
+
+var edges = new vis.DataSet([
+
+//conectores entre nodos principales
+{id:'e1_2',from:1, to:2,hidden:false},
+
+//temas independientes 
+/*
+{id:'e2_3',from:2, to:3,hidden:false},
+{id:'e2_4',from:3, to:4,hidden:false},
+*/
+//conectores a nodo raiz
+  {id: 'e001', from: 0, to: 1, hidden: false,color:{borderWidth:10}},
+  {id: 'e002', from: 0, to: 2, hidden: false},
+  {id: 'e003', from: 0, to: 3, hidden: false},
+  {id: 'e004', from: 0, to: 4, hidden: false},
+
+  //agregamos la lineas que dan los caminos
+ 
+  {id: 'e101', from: 1, to: 101, hidden: true,color:{borderWidth:10}},
+  {id: 'e102', from: 1, to: 102, hidden: true},
+  {id: 'e103', from: 1, to: 103, hidden: true},
+  {id: 'e104', from: 1, to: 104, hidden: true},
+
+  //se agregan las lineas que salen del item 2
+  {id: 'e201', from: 2, to: 201, hidden: true},
+  {id: 'e202', from: 2, to: 202, hidden: true},
+
+  //se agregan las lineas que comunicacan proyectos
+  {id: 'e301', from: 3, to: 301, hidden: true},
+  {id: 'e302', from: 3, to: 302, hidden: true},
+  {id: 'e303', from: 3, to: 303, hidden: true},
+  {id: 'e304', from: 3, to: 304, hidden: true},
+
+  //se agregan las lineas de de Metodo Ágiles
+  {id: 'e401', from: 4, to: 401, hidden: true},
+  {id: 'e402', from: 4, to: 402, hidden: true},  
+
+
+
+  //se agrega las lineas de mantenimiento de software/mantenimimiento
+
+  {id: 'e1011', from: 101, to: 1011, hidden: true},
+  {id: 'e1012', from: 101, to: 1012, hidden: true},
+  {id: 'e1013', from: 101, to: 1013, hidden: true},
+  {id: 'e1014', from: 101, to: 1014, hidden: true},
+  {id: 'e1015', from: 101, to: 1015, hidden: true},
+
+    //se agrega las lineas de mantenimiento de software/Analsis estatico
+
+  {id: 'e1021', from: 102, to: 1021, hidden: true},
+  {id: 'e1022', from: 102, to: 1022, hidden: true},
+  {id: 'e1023', from: 102, to: 1023, hidden: true},
+  {id: 'e1024', from: 102, to: 1024, hidden: true},
+  {id: 'e1025', from: 102, to: 1025, hidden: true},
+  {id: 'e1026', from: 102, to: 1026, hidden: true},
+
+
+    //se agrega las lineas de mantenimiento de software/Refactorizacion 
+  {id: 'e1031', from: 103, to: 1031, hidden: true},
+  {id: 'e1032', from: 103, to: 1032, hidden: true},
+  {id: 'e1033', from: 103, to: 1033, hidden: true},
+  {id: 'e1034', from: 103, to: 1034, hidden: true},
+  {id: 'e1035', from: 103, to: 1035, hidden: true},
+  {id: 'e1036', from: 103, to: 1036, hidden: true},
+  {id: 'e1037', from: 103, to: 1037, hidden: true},
+  {id: 'e1038', from: 103, to: 1038, hidden: true},
+
+]);
+
+var container = document.getElementById('mynetwork');
+var data = {
+  nodes: nodes,
+  edges: edges
+};
+
+
+var width = 1350;
+var height = 650;
+
+var options = {
+  width:width+'px',
+  height:height+'px',
+
+
+  edges: {
+        //smooth: {type: "continuous"},
+        smooth: {type: "straightCross"},
+         
+          },
+          
+        nodes: { borderWidth: 2 ,fixed:{x:false, y:false}},
+        interaction: { hover: true },
+        physics: {stabilization: true,wind: { x: 0, y: 0 },},
+       
+      
+
+        //layaout inicial
+        /*layout:{ 
+          hierarchical:{
+            direction: "DU",
+            enabled:true,
+            levelSeparation:100,
+            nodeSpacing:50,
+            parentCentralization:true
+           
+          }
+          },*/
+
+
+          /*
+  layout: {
+        hierarchical: {
+            direction: "DU",
+            sortMethod: "directed",
+            nodeSpacing: 80,
+            treeSpacing: 120
+        }
+      },
+          */
+
+          //tercer intento layout
+          layout: {
+    		improvedLayout: true,
+        hierarchical: {
+            direction: "DU",
+            sortMethod: "hubsize",
+            nodeSpacing: 200,
+            treeSpacing: 200
+        }
+    },
+       
+          physics: {//nos da las fisicas podemos tambien cambiar cuan velos se desplazan
+            barnesHut: {
+              centralGravity: 0.2,
+             // springLength: 100,
+              //springConstant: 0.01,
+              //damping: 0.7,
+              //avoidOverlap: 1
+				},
+			maxVelocity: 5,
+			minVelocity: 0.47,
+			//solver: "barnesHut"
+      solver: "hierarchicalRepulsion"
+    }     
+      
+      ,
+   
+
+    nodes: {
+        "physics": true
+    },
+    interaction: {
+            navigationButtons: true,
+            keyboard: true,
+          },
+          
+      };
+      edges.add({from: 2696, to: 2697, value:4,color:{color:"#ff383f"}});
+    /*  edges.add({layout:{ 
+            hierarchical: {
+              //direction: "LR",//DU UD LR RL direcciones
+              shakeTowards:"roots",
+              treeSpacing:10,
+              blockShifting:false
+
+            },
+          },});
+*/
+var network = new vis.Network(container, data, options);
+
+
+
+network.moveTo({
+    position: {x: 0, y: 0},
+    offset: {x: -width/2, y: -height/2},
+    scale: 1,
+})
+
+
+
+//estabilizacion
+network.on("stabilizationIterationsDone", function(){
+  network.setOptions( { physics: false } );
+});
+
+// true=hide; false=show
+var toggle1 = false;
+var toggle2= false;
+var toggle3=false;
+var toggle4=false;
+
+//para nivel 3
+var toggle101=false;
+var toggle102=false;
+var toggle103=false;
+var toggle104=false;
+
+
+//solo funciona para los nodos del tercer nivel
+function ocultar (e,tw_id){
+
+  //Mantenimiento de software//mantenimiento
+
+  console.log("datos: ",e);
+  console.log("datos 2: ",nodes);
+
+
+
+
+}
+
+network.on("click", function(e) {
+
+
+  console.log("datos 3: ",nodes);
+ //par amostrar los nodos iniciales
+  tw_id = 1;
+  if (e.nodes[0] == tw_id) {
+    nodes.update([
+      {id:101, hidden: toggle1 },
+      {id: 102, hidden: toggle1},
+      {id: 103, hidden: toggle1},
+      {id: 104, hidden: toggle1}
+      
+    ]);
+    edges.update([
+      {id: 'e101', hidden: toggle1},
+      {id: 'e102', hidden: toggle1},
+      {id: 'e103', hidden: toggle1},
+      {id: 'e104', hidden: toggle1}
+   
+    ]);
+
+    
+    network.fit();
+    // switch toggle
+    toggle1 = !toggle1;
+  }
+
+  tw_id = 2;
+  if (e.nodes[0] == tw_id) {
+    nodes.update([
+      {id:201, hidden: toggle2 },
+      {id: 202, hidden: toggle2}
+     
+      
+    ]);
+    edges.update([
+      {id: 'e201', hidden: toggle2},
+      {id: 'e202', hidden: toggle2},
+      
+    ]);
+
+    
+    network.fit();
+    // switch toggle
+    toggle2 = !toggle2;
+  }
+
+
+  tw_id = 3;
+  if (e.nodes[0] == tw_id) {
+    nodes.update([
+      {id:301, hidden: toggle3 },
+      {id: 302, hidden: toggle3},
+      {id: 303, hidden: toggle3},
+      {id: 304, hidden: toggle3}
+      
+    ]);
+    edges.update([
+      {id: 'e301', hidden: toggle3},
+      {id: 'e302', hidden: toggle3},
+      {id: 'e303', hidden: toggle3},
+      {id: 'e304', hidden: toggle3}
+   
+    ]);
+
+    
+    network.fit();
+    // switch toggle
+    toggle3 = !toggle3;
+  }
+
+
+  tw_id = 4;
+  if (e.nodes[0] == tw_id) {
+    nodes.update([
+      {id:401, hidden: toggle4 },
+      {id: 402, hidden: toggle4},
+      
+      
+    ]);
+    edges.update([
+      {id: 'e401', hidden: toggle4},
+      {id: 'e402', hidden: toggle4}
+   
+    ]);
+
+    
+    network.fit();
+    // switch toggle
+    toggle4 = !toggle4;
+  }
+
+
+
+  //Mantenimiento de software//mantenimiento
+
+  
+
+  tw_id = 101;
+  ocultar(e,tw_id);
+  if (e.nodes[0] == tw_id) {
+    nodes.update([
+      {id:1011, hidden: toggle101 },
+      {id: 1012, hidden: toggle101},
+      {id: 1013, hidden: toggle101},
+      {id: 1014, hidden: toggle101}
+      
+    ]);
+    edges.update([
+      {id: 'e1011', hidden: toggle101},
+      {id: 'e1012', hidden: toggle101},
+      {id: 'e1013', hidden: toggle101},
+      {id: 'e1014', hidden: toggle101}
+   
+    ]);
+
+    if(toggle102==true){
+      toggle102=false;
+    }
+    network.fit();
+    // switch toggle
+    toggle101 = !toggle101;
+  }
+
+
+    //Mantenimiento de software //Analisis estatico
+    tw_id = 102;
+  if (e.nodes[0] == tw_id) {
+    nodes.update([
+      {id:1021, hidden: toggle102 },
+      {id: 1022, hidden: toggle102},
+      {id: 1023, hidden: toggle102},
+      {id: 1024, hidden: toggle102}
+      
+    ]);
+    edges.update([
+      {id: 'e1021', hidden: toggle102},
+      {id: 'e1022', hidden: toggle102},
+      {id: 'e1023', hidden: toggle102},
+      {id: 'e1024', hidden: toggle102}
+   
+    ]);
+
+    
+    network.fit();
+    // switch toggle
+    toggle102 = !toggle102;
+  }
+
+   //Mantenimiento de software/Refactorizacion
+    tw_id = 103;
+  if (e.nodes[0] == tw_id) {
+    nodes.update([
+      {id:1031, hidden: toggle103 },
+      {id: 1032, hidden: toggle103},
+      {id: 1033, hidden: toggle103},
+      {id: 1034, hidden: toggle103},
+      {id:1035, hidden: toggle103 },
+      {id: 1036, hidden: toggle103},
+      {id: 1037, hidden: toggle103},
+      {id: 1038, hidden: toggle103}
+      
+    ]);
+    edges.update([
+      {id: 'e1031', hidden: toggle103},
+      {id: 'e1032', hidden: toggle103},
+      {id: 'e1033', hidden: toggle103},
+      {id: 'e1034', hidden: toggle103},
+      {id: 'e1035', hidden: toggle103},
+      {id: 'e1036', hidden: toggle103},
+      {id: 'e1037', hidden: toggle103},
+      {id: 'e1038', hidden: toggle103}
+   
+    ]);
+
+    
+    network.fit();
+    // switch toggle
+    toggle103 = !toggle103;
+  }
+
+});
+
+
+
+
+
+    </script>
+
+<div>
+  <label for="file">Downloading progress:</label>
+  <progress id="file" value="32" max="100"> 32% </progress>
+  <h1>Hola</h1>
+</div>
+  </body>
+</html>
