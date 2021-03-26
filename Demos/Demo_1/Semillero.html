@@ -54,8 +54,8 @@
         //temas iniciales o principales
   {id: 1,level:1, label: "Mantenimiento de software\n57%", hidden: false,shape: "box" , fixed: true ,color: {background: "#7BC4F6",border: "#7BC4F6",hover: { background: "#58B6F6", border: "#239EF2" },}}, 
   {id: 2,level:1, label: "Rediseño y patrones de diseño\n50%",shape: "box" , fixed: true, hidden: false,color: {background: "#7BC4F6",border: "#7BC4F6"}}, 
-  {id: 3,level:1, label: "Proyectos",shape: "box" , fixed: true,  hidden: false},
-  {id: 4,level:1, label: "Metodos Ágiles",shape: "box" , fixed: true,  hidden: false},
+  {id: 3,level:1, label: "Proyectos\n0%",shape: "box" , fixed: true,  hidden: false,color:{background:"#0000"}},
+  {id: 4,level:1, label: "Metodos Ágiles\n0%",shape: "box" , fixed: true,  hidden: false,color:{background:"#0000"}},
 
 //son 4 subtemas de el item Mantenimiento con id 1
   {id: 101,level:2, label: "Mantenimiento\n100%",shape: "box" ,  hidden: true,color:{background:"#0098FF"}},
@@ -197,6 +197,38 @@ var height = 650;
 var options = {
   width:width+'px',
   height:height+'px',
+
+  manipulation: {
+          addNode: function (data, callback) {
+            // filling in the popup DOM elements
+            document.getElementById('operation').innerHTML = "Add Node";
+            document.getElementById('node-id').value = data.id;
+            document.getElementById('node-label').value = data.label;
+            document.getElementById('saveButton').onclick = saveData.bind(this, data, callback);
+            document.getElementById('cancelButton').onclick = clearPopUp.bind();
+            document.getElementById('network').style.display = 'block';
+          },
+          editNode: function (data, callback) {
+            // filling in the popup DOM elements
+            document.getElementById('operation').innerHTML = "Edit Node";
+            document.getElementById('node-id').value = data.id;
+            document.getElementById('node-label').value = data.label;
+            document.getElementById('saveButton').onclick = saveData.bind(this, data, callback);
+            document.getElementById('cancelButton').onclick = cancelEdit.bind(this,callback);
+            document.getElementById('network').style.display = 'block';
+          },
+          addEdge: function (data, callback) {
+            if (data.from == data.to) {
+              var r = confirm("Do you want to connect the node to itself?");
+              if (r == true) {
+                callback(data);
+              }
+            }
+            else {
+              callback(data);
+            }
+          }
+        },
 
 
   edges: {
