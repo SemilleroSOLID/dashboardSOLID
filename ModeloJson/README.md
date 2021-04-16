@@ -1,0 +1,1 @@
+Contiene los modelos de Json que va a recibir el aplicativo
