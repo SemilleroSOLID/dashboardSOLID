@@ -1,0 +1,32 @@
+{
+    "productos":[
+        {
+            "id":"1",
+            "name":"producto 1",
+            "categoriasId":1
+        },
+        {
+            "id":"2",
+            "name":"producto 2",
+            "categoriasId":2
+        }
+        , {
+            "id":"2",
+            "name":"producto 2",
+            "categoriasId":3
+        }
+    ],
+    "categorias":[
+        {
+            "id":"1",
+            "name":"categoria 1"
+        },
+        {
+            "id":"1",
+            "name":"categoria 1"
+        }, {
+            "id":"1",
+            "name":"categoria 1"
+        }
+    ]
+}
