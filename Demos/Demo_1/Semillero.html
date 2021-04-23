@@ -107,9 +107,6 @@
       { id: 1041, level: 3, label: "ista de chequeo de lectura - Métricas básicas de código\n100%", shape: "box", hidden: true },
       { id: 1042, level: 3, label: "Material sobre métricas básicas (de código)Archivo\n100%", shape: "box", hidden: true },
       { id: 1043, level: 3, label: "Taller Métricas básicas de código\n100%", shape: "box", hidden: true },
-
-
-
     ]);
 
 
@@ -286,50 +283,48 @@ layout: {
           },});
 */
     var network = new vis.Network(container, data, options);
-
-
-
     network.moveTo({
       position: { x: 0, y: 0 },
       offset: { x: -width / 2, y: -height / 2 },
       scale: 1,
     })
-
-
-
     //estabilizacion
     network.on("stabilizationIterationsDone", function () {
       network.setOptions({ physics: false });
     });
 
-    // true=hide; false=show
-    var toggle1 = false;
-    var toggle2 = false;
-    var toggle3 = false;
-    var toggle4 = false;
 
-    //para nivel 3
-    var toggle101 = false;
-    var toggle102 = false;
-    var toggle103 = false;
-    var toggle104 = false;
-
-
-    function ListaIdEdgesEvento(CapturaEvento) {
-
+    /*function ListaIdEdgesEvento(idNodo) {
       var contador = 0;
+      CapturaEvento=quienesSonLosHijosLineas(idNodo);
+      console.log("tiene hijos ",CapturaEvento);
+
       var listaIdEdgesEvento = [];
-      for (var i = 0; i < CapturaEvento.edges.length; i++) {
-        if (CapturaEvento.edges[i].slice(0, 1) != 'R') {
-          if (CapturaEvento.edges[i].slice(0, 3) != 'e00') {
-            listaIdEdgesEvento[contador] = CapturaEvento.edges[i];
+      for (var i = 0; i < CapturaEvento.length; i++) {
+        if (CapturaEvento[i].slice(0, 1) != 'R') {
+          if (CapturaEvento[i].slice(0, 3) != 'e00') {
+            listaIdEdgesEvento[contador] = CapturaEvento[i];
             contador++;
           }
         }
       }
       return listaIdEdgesEvento;
-    }
+    }*/
+    function ListaIdEdgesEvento(idNodo) {
+      var contador = 0;
+      CapturaEvento = quienesSonLosHijosLineas(idNodo);
+      var nivelInicial = getLevel(idNodo);
+      var listaIdEdgesEvento = [];
 
+      for (var i = 0; i < CapturaEvento.length; i++) {
+        var nivelNodo = getLevel(edges.get(CapturaEvento[i]).to);
+        if (nivelNodo > nivelInicial) {
+          listaIdEdgesEvento[contador] = CapturaEvento[i];
+          contador++;
+        }
+      }
+      return listaIdEdgesEvento;
+    }
 
 
     function getLevel(nodoId) {
@@ -345,68 +340,71 @@ layout: {
       return listaIdNodosEvento;
     }
 
+    //generar los hijos para el llamado recursivo
+    function quienesSonLosHijosLineas(id) {
+      var temporal = network.getConnectedEdges(id);
+      return temporal;
+    }
+
 
     //solo funciona para los  del primer nivel
-    function ocultar2(CapturaEvento, tw_idDos) {
-
+    //recibe una lista, y el id
+    function OcultarNodos(IdNodo) {
       var edgesEvento;//los Id de las conexiones que interactuan 
       var nodesEvento;//Los Id de los nodos que interactuan con el evento
 
       //sacamos primero lista de conexiones que interactuan con el evento
-      edgesEvento = ListaIdEdgesEvento(CapturaEvento);
-
+      edgesEvento = ListaIdEdgesEvento(IdNodo);
       nodesEvento = ListaIdNodosEvento(edgesEvento);
-      //
 
-      console.log("____lineas____", edgesEvento)
-      console.log("____Nodes____", nodesEvento)
+      //console.log("____lineas____", edgesEvento)
+      //console.log("____Nodes____", nodesEvento)
 
-      console.log("Ultimo level ", getLevel(nodesEvento));
-
-      
+      var inicialLevel = getLevel(nodesEvento);
       var UltimoLevel = getLevel(nodesEvento[nodesEvento.length - 1]);
+      //console.log("Ultimo level ", UltimoLevel, " nodoID: ", IdNodo, "  ", getLevel(IdNodo));
 
       //primero tenemos que actualizar los nodos Hidden=true
       for (var i = 0; i < nodesEvento.length; i++) {
-        if (getLevel(nodesEvento[i]) == UltimoLevel) {
-          nodes.update([
-            { id: nodesEvento[i], hidden: !nodes.get(nodesEvento[i]).hidden },
-          ])
+
+        console.log("R ",IdNodo," hijos: ",quienesSonLosHijosLineas(nodesEvento[i]),"true or false:",nodes.get(edges.get(quienesSonLosHijosLineas(nodesEvento[i])[0]).to).hidden)
+        if (nodes.get(edges.get(quienesSonLosHijosLineas(nodesEvento[i])[0]).to).hidden ==false) {
+          console.log("++++antes de recursividad ", nodesEvento);
+          OcultarNodos(nodesEvento[i]);
+          console.log("-----despues de recursividad ",nodesEvento);
         }
+        //if (getLevel(nodesEvento[i]) == UltimoLevel) {
+        //console.log("llamado:  ", i, nodesEvento[i], " tienen hijos? ", quienesSonLosHijosLineas(nodesEvento[i]));
+
+        nodes.update([
+          { id: nodesEvento[i], hidden: !nodes.get(nodesEvento[i]).hidden },
+        ])
+
+        //}
       }
       //como 2 paso tenemos que mostrar las conexiones 
       for (var i = 0; i < edgesEvento.length; i++) {
         var conexionAotro = getLevel(edges.get(edgesEvento[i]).to);
-        if (conexionAotro == UltimoLevel) {
-          edges.update([
-            { id: edgesEvento[i], hidden: !edges.get(edgesEvento[i]).hidden },
-          ])
-        }
+        //if (conexionAotro == UltimoLevel) {
+        edges.update([
+          { id: edgesEvento[i], hidden: !edges.get(edgesEvento[i]).hidden },
+        ])
+        //}
       }
       network.fit();
     }
 
-
-
-
     network.on("click", function (e) {
 
       if (e.edges.length > 0) {
-        ocultar2(e, 1);
+
+        OcultarNodos(e.nodes[0]);
       }
-      console.log("datos 3: ", e.edges.length);
-     
+      //console.log("datos 3: ", edges);
+      //console.log(e.nodes);
+
     },
-
-
-
-
-
     );
-
-
-//juan
-
 
   </script>
 
