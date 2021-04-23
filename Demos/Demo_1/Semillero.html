@@ -36,6 +36,7 @@
   </style>
 
   <script type="text/javascript" src="js/CopyNetwork.js"></script>
+  <script type="text/javascript" src="js/config.js"></script>
 </head>
 
 <body>
@@ -51,62 +52,62 @@
       //nodo raiz
       { id: 0, level: 0, label: "Software", hidden: true },
       //temas iniciales o principales
-      { id: 1, level: 1, label: "Mantenimiento de software\n57%", hidden: false, shape: "box", fixed: true, color: { background: "#7BC4F6", border: "#7BC4F6", hover: { background: "#58B6F6", border: "#239EF2" }, } },
-      { id: 2, level: 1, label: "Rediseño y patrones de diseño\n50%", shape: "box", fixed: true, hidden: false, color: { background: "#7BC4F6", border: "#7BC4F6" } },
-      { id: 3, level: 1, label: "Proyectos\n0%", shape: "box", fixed: true, hidden: false, color: { background: "#0000" } },
-      { id: 4, level: 1, label: "Metodos Ágiles\n0%", shape: "box", fixed: true, hidden: false, color: { background: "#0000" } },
+      { id: 1, level: 1, label: "Mantenimiento de software\n57%", hidden: false, shape: forma1, fixed: true, color: { background: color1, border: color1, hover: { background: color2, border: color3 }, } },
+      { id: 2, level: 1, label: "Rediseño y patrones de diseño\n50%", shape: forma1, fixed: true, hidden: false, color: { background: color1, border: color1 } },
+      { id: 3, level: 1, label: "Proyectos\n0%", shape: forma1, fixed: true, hidden: false, color: { background: color4 } },
+      { id: 4, level: 1, label: "Metodos Ágiles\n0%", shape: forma1, fixed: true, hidden: false, color: { background: color4 } },
 
       //son 4 subtemas de el item Mantenimiento con id 1
-      { id: 101, level: 2, label: "Mantenimiento\n100%", shape: "box", hidden: true, color: { background: "#0098FF" } },
-      { id: 102, level: 2, label: "Analisis estatico\n80%", shape: "box", hidden: true, color: { background: "#45B4FF" } },
-      { id: 103, level: 2, label: "Refactorizacion\n50%", shape: "box", hidden: true, color: { background: "#78C9FF" } },
-      { id: 104, level: 2, label: "Metricas\n0%", shape: "box", hidden: true, color: { background: "#D3EDFF" } },
+      { id: 101, level: 2, label: "Mantenimiento\n100%", shape: forma1, hidden: true, color: { background: color5 } },
+      { id: 102, level: 2, label: "Analisis estatico\n80%", shape: forma1, hidden: true, color: { background: color6 } },
+      { id: 103, level: 2, label: "Refactorizacion\n50%", shape: forma1, hidden: true, color: { background: color7 } },
+      { id: 104, level: 2, label: "Metricas\n0%", shape: forma1, hidden: true, color: { background: color8 } },
 
       //dos subtemas de REDISEÑO Y PATRONES DE DISEÑO
-      { id: 201, level: 2, label: "Principios de diseño\n100%", shape: "box", hidden: true, color: { background: "#0098FF" } },
-      { id: 202, level: 2, label: "Patrones de diseño\n0%", shape: "box", hidden: true, color: { background: "#D3EDFF" } },
+      { id: 201, level: 2, label: "Principios de diseño\n100%", shape: forma1, hidden: true, color: { background: color5 } },
+      { id: 202, level: 2, label: "Patrones de diseño\n0%", shape: forma1, hidden: true, color: { background: color8 } },
 
       // temas individuales de los Proyectos
-      { id: 301, level: 2, label: "Grupos de proyecto", shape: "box", hidden: true },
-      { id: 302, level: 2, label: "Primer proyecto: Mantenimiento", shape: "box", hidden: true },
-      { id: 303, level: 2, label: "Formato de plan de tareas de mantenimiento", shape: "box", hidden: true },
-      { id: 304, level: 2, label: "Grupos de proyecto", shape: "box", hidden: true },
+      { id: 301, level: 2, label: "Grupos de proyecto", shape: forma1, hidden: true },
+      { id: 302, level: 2, label: "Primer proyecto: Mantenimiento", shape: forma1, hidden: true },
+      { id: 303, level: 2, label: "Formato de plan de tareas de mantenimiento", shape: forma1, hidden: true },
+      { id: 304, level: 2, label: "Grupos de proyecto", shape: forma1, hidden: true },
 
       //temas individuales de Metodo Ágiles
-      { id: 401, level: 2, label: "Metodos Ágiles", shape: "box", hidden: true },
-      { id: 402, level: 2, label: "Historias de usuarios", shape: "box", hidden: true },
+      { id: 401, level: 2, label: "Metodos Ágiles", shape: forma1, hidden: true },
+      { id: 402, level: 2, label: "Historias de usuarios", shape: forma1, hidden: true },
 
 
       //--------------------------------
       //temas especificos Mantenimiento de software/Mantenimiento
-      { id: 1011, level: 3, label: "Lista de chequeo de lectura\n100%", shape: "box", hidden: true },
-      { id: 1012, level: 3, label: "material sobre mantenimiento de software\n100%", shape: "box", hidden: true },
-      { id: 1013, level: 3, label: "preguntas sobre mantenimiento\n100%", shape: "box", hidden: true },
-      { id: 1014, level: 3, label: "taller mantenimiento\n100%", shape: "box", hidden: true },
-      { id: 1015, level: 3, label: "Documento/apoyo\n100%", shape: "box", hidden: true },
+      { id: 1011, level: 3, label: "Lista de chequeo de lectura\n100%", shape: forma1, hidden: true },
+      { id: 1012, level: 3, label: "material sobre mantenimiento de software\n100%", shape: forma1, hidden: true },
+      { id: 1013, level: 3, label: "preguntas sobre mantenimiento\n100%", shape: forma1, hidden: true },
+      { id: 1014, level: 3, label: "taller mantenimiento\n100%", shape: forma1, hidden: true },
+      { id: 1015, level: 3, label: "Documento/apoyo\n100%", shape: forma1, hidden: true },
 
       //temas especificos Mantenimiento de software/Análisis estático de código
-      { id: 1021, level: 3, label: "Lista de chequeo de lectura\n100%", shape: "box", hidden: true },
-      { id: 1022, level: 3, label: "Presentación Análisis estático de código\n100%", shape: "box", hidden: true },
-      { id: 1023, level: 3, label: "Video Análisis Estático de Código\n100%", shape: "box", hidden: true },
-      { id: 1024, level: 3, label: "Apuntes sobre Análisis estático\n100%", shape: "box", hidden: true },
-      { id: 1025, level: 3, label: "Taller Análisis Estático de Código\n100%", shape: "box", hidden: true },
+      { id: 1021, level: 3, label: "Lista de chequeo de lectura\n100%", shape: forma1, hidden: true },
+      { id: 1022, level: 3, label: "Presentación Análisis estático de código\n100%", shape: forma1, hidden: true },
+      { id: 1023, level: 3, label: "Video Análisis Estático de Código\n100%", shape: forma1, hidden: true },
+      { id: 1024, level: 3, label: "Apuntes sobre Análisis estático\n100%", shape: forma1, hidden: true },
+      { id: 1025, level: 3, label: "Taller Análisis Estático de Código\n100%", shape: forma1, hidden: true },
 
       //temas especificos Mantenimiento de software/Refactorizacion
-      { id: 1031, level: 3, label: "Lista de chequeo de lectura - Refactorización\n100%", shape: "box", hidden: true },
-      { id: 1032, level: 3, label: "Presentación Malos olores de código\n100%", shape: "box", hidden: true },
-      { id: 1033, level: 3, label: "Video Malos Olores del Código\n100%", shape: "box", hidden: true },
-      { id: 1034, level: 3, label: "Presentación Refactorización\n100%", shape: "box", hidden: true },
-      { id: 1035, level: 3, label: "Enlace a un catálogo de malos olores de código\n100%", shape: "box", hidden: true },
-      { id: 1036, level: 3, label: "Enlace al catálogo de refactorizaciones\n100%", shape: "box", hidden: true },
-      { id: 1037, level: 3, label: "Taller Refactorización\n100%", shape: "box", hidden: true },
-      { id: 1038, level: 3, label: "Taller Refactorización 2\n100%", shape: "box", hidden: true },
+      { id: 1031, level: 3, label: "Lista de chequeo de lectura - Refactorización\n100%", shape: forma1, hidden: true },
+      { id: 1032, level: 3, label: "Presentación Malos olores de código\n100%", shape: forma1, hidden: true },
+      { id: 1033, level: 3, label: "Video Malos Olores del Código\n100%", shape: forma1, hidden: true },
+      { id: 1034, level: 3, label: "Presentación Refactorización\n100%", shape: forma1, hidden: true },
+      { id: 1035, level: 3, label: "Enlace a un catálogo de malos olores de código\n100%", shape: forma1, hidden: true },
+      { id: 1036, level: 3, label: "Enlace al catálogo de refactorizaciones\n100%", shape: forma1, hidden: true },
+      { id: 1037, level: 3, label: "Taller Refactorización\n100%", shape: forma1, hidden: true },
+      { id: 1038, level: 3, label: "Taller Refactorización 2\n100%", shape: forma1, hidden: true },
 
 
       //temas especificos Mantenimiento de software/Refactorizacion
-      { id: 1041, level: 3, label: "ista de chequeo de lectura - Métricas básicas de código\n100%", shape: "box", hidden: true },
-      { id: 1042, level: 3, label: "Material sobre métricas básicas (de código)Archivo\n100%", shape: "box", hidden: true },
-      { id: 1043, level: 3, label: "Taller Métricas básicas de código\n100%", shape: "box", hidden: true },
+      { id: 1041, level: 3, label: "ista de chequeo de lectura - Métricas básicas de código\n100%", shape: forma1, hidden: true },
+      { id: 1042, level: 3, label: "Material sobre métricas básicas (de código)Archivo\n100%", shape: forma1, hidden: true },
+      { id: 1043, level: 3, label: "Taller Métricas básicas de código\n100%", shape: forma1, hidden: true },
     ]);
 
 
@@ -188,8 +189,7 @@
     };
 
 
-    var width = 1350;
-    var height = 650;
+
 
     var options = {
       width: width + 'px',
@@ -367,11 +367,11 @@ layout: {
       //primero tenemos que actualizar los nodos Hidden=true
       for (var i = 0; i < nodesEvento.length; i++) {
 
-        console.log("R ",IdNodo," hijos: ",quienesSonLosHijosLineas(nodesEvento[i]),"true or false:",nodes.get(edges.get(quienesSonLosHijosLineas(nodesEvento[i])[0]).to).hidden)
-        if (nodes.get(edges.get(quienesSonLosHijosLineas(nodesEvento[i])[0]).to).hidden ==false) {
+        console.log("R ", IdNodo, " hijos: ", quienesSonLosHijosLineas(nodesEvento[i]), "true or false:", nodes.get(edges.get(quienesSonLosHijosLineas(nodesEvento[i])[0]).to).hidden)
+        if (nodes.get(edges.get(quienesSonLosHijosLineas(nodesEvento[i])[0]).to).hidden == false) {
           console.log("++++antes de recursividad ", nodesEvento);
           OcultarNodos(nodesEvento[i]);
-          console.log("-----despues de recursividad ",nodesEvento);
+          console.log("-----despues de recursividad ", nodesEvento);
         }
         //if (getLevel(nodesEvento[i]) == UltimoLevel) {
         //console.log("llamado:  ", i, nodesEvento[i], " tienen hijos? ", quienesSonLosHijosLineas(nodesEvento[i]));
