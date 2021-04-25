@@ -6,6 +6,6 @@ var color5 = "#0098FF";
 var color6 = "#0098FF";
 var color7 = "#78C9FF";
 var color8 = "#D3EDFF";
-var forma1 = "circle"; // "hexagon", "star", "triangle", "square", "diamond", "database", "ellipse", "circle"
+var forma1 = "ellipse"; // "hexagon", "star", "triangle", "square", "diamond", "database", "ellipse", "circle"
 var width = 1350;
 var height = 650;

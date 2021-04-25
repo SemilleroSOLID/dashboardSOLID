@@ -373,9 +373,9 @@ layout: {
           OcultarNodos(nodesEvento[i]);
           console.log("-----despues de recursividad ", nodesEvento);
         }
+
         //if (getLevel(nodesEvento[i]) == UltimoLevel) {
         //console.log("llamado:  ", i, nodesEvento[i], " tienen hijos? ", quienesSonLosHijosLineas(nodesEvento[i]));
-
         nodes.update([
           { id: nodesEvento[i], hidden: !nodes.get(nodesEvento[i]).hidden },
         ])
@@ -394,12 +394,34 @@ layout: {
       network.fit();
     }
 
+
+
+    /*
+           * Obtener todos los nodos secundarios
+           * red: objeto gráfico
+           * _thisNode: el nodo en el que se hizo clic (nodo principal)
+           * _Allnodes: utilizado para contener la matriz de ID de nodo secundario
+     * */
+    function getAllChilds(network, _thisNode, _Allnodes) {
+      var _nodes = network.getConnectedNodes(_thisNode, "to");
+      if (_nodes.length > 0) {
+        for (var i = 0; i < _nodes.length; i++) {
+          getAllChilds(network, _nodes[i], _Allnodes);
+          _Allnodes.push(_nodes[i]);
+        }
+      }
+      return _Allnodes
+    };
+
     network.on("click", function (e) {
 
       if (e.edges.length > 0) {
 
         OcultarNodos(e.nodes[0]);
       }
+
+      var nodosN = []
+      console.log("Los hijos de ", e.nodes[0], "son", getAllChilds(network, e.nodes[0], nodosN));
       //console.log("datos 3: ", edges);
       //console.log(e.nodes);
 
