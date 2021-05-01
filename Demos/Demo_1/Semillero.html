@@ -50,64 +50,66 @@
     var nodes = new vis.DataSet([
 
       //nodo raiz
-      { id: 0, level: 0, label: "Software", hidden: true },
+      { id: 0, level: 0, name: 0, label: "Software", hidden: true },
       //temas iniciales o principales
-      { id: 1, level: 1, label: "Mantenimiento de software\n57%", hidden: false, shape: forma1, fixed: true, color: { background: color1, border: color1, hover: { background: color2, border: color3 }, } },
-      { id: 2, level: 1, label: "Rediseño y patrones de diseño\n50%", shape: forma1, fixed: true, hidden: false, color: { background: color1, border: color1 } },
-      { id: 3, level: 1, label: "Proyectos\n0%", shape: forma1, fixed: true, hidden: false, color: { background: color4 } },
-      { id: 4, level: 1, label: "Metodos Ágiles\n0%", shape: forma1, fixed: true, hidden: false, color: { background: color4 } },
+      { id: 1, level: 1, name: 1, label: "Mantenimiento de software\n57%", hidden: false, shape: forma1, fixed: true, color: { background: color1, border: color1, hover: { background: color2, border: color3 }, } },
+      { id: 2, level: 1, name: 2, label: "Rediseño y patrones de diseño\n50%", shape: forma1, fixed: true, hidden: false, color: { background: color1, border: color1 } },
+      { id: 3, level: 1, name: 3, label: "Proyectos\n0%", shape: forma1, fixed: true, hidden: false, color: { background: color4 } },
+      { id: 4, level: 1, name: 4, label: "Metodos Ágiles\n0%", shape: forma1, fixed: true, hidden: false, color: { background: color4 } },
 
       //son 4 subtemas de el item Mantenimiento con id 1
-      { id: 101, level: 2, label: "Mantenimiento\n100%", shape: forma1, hidden: true, color: { background: color5 } },
-      { id: 102, level: 2, label: "Analisis estatico\n80%", shape: forma1, hidden: true, color: { background: color3 } },
-      { id: 103, level: 2, label: "Refactorizacion\n50%", shape: forma1, hidden: true, color: { background: color4 } },
-      { id: 104, level: 2, label: "Metricas\n0%", shape: forma1, hidden: true, color: { background: color5 } },
+      { id: 101, level: 2, name: 1, label: "Mantenimiento\n100%", shape: forma1, hidden: true, color: { background: color5 } },
+      { id: 102, level: 2, name: 1, label: "Analisis estatico\n80%", shape: forma1, hidden: true, color: { background: color3 } },
+      { id: 103, level: 2, name: 1, label: "Refactorizacion\n50%", shape: forma1, hidden: true, color: { background: color4 } },
+      { id: 104, level: 2, name: 1, label: "Metricas\n0%", shape: forma1, hidden: true, color: { background: color5 } },
 
       //dos subtemas de REDISEÑO Y PATRONES DE DISEÑO
-      { id: 201, level: 2, label: "Principios de diseño\n100%", shape: forma1, hidden: true, color: { background: color5 } },
-      { id: 202, level: 2, label: "Patrones de diseño\n0%", shape: forma1, hidden: true, color: { background: color5 } },
+      { id: 201, level: 2, name: 2, label: "Principios de diseño\n100%", shape: forma1, hidden: true, color: { background: color5 } },
+      { id: 202, level: 2, name: 2, label: "Patrones de diseño\n0%", shape: forma1, hidden: true, color: { background: color5 } },
 
       // temas individuales de los Proyectos
-      { id: 301, level: 2, label: "Grupos de proyecto", shape: forma1, hidden: true },
-      { id: 302, level: 2, label: "Primer proyecto: Mantenimiento", shape: forma1, hidden: true },
-      { id: 303, level: 2, label: "Formato de plan de tareas de mantenimiento", shape: forma1, hidden: true },
-      { id: 304, level: 2, label: "Grupos de proyecto", shape: forma1, hidden: true },
+      { id: 301, level: 2, name: 3, label: "Grupos de proyecto", shape: forma1, hidden: true },
+      { id: 302, level: 2, name: 3, label: "Primer proyecto: Mantenimiento", shape: forma1, hidden: true },
+      { id: 303, level: 2, name: 3, label: "Formato de plan de tareas de mantenimiento", shape: forma1, hidden: true },
+      { id: 304, level: 2, name: 3, label: "Grupos de proyecto", shape: forma1, hidden: true },
 
       //temas individuales de Metodo Ágiles
-      { id: 401, level: 2, label: "Metodos Ágiles", shape: forma1, hidden: true },
-      { id: 402, level: 2, label: "Historias de usuarios", shape: forma1, hidden: true },
+      { id: 401, level: 2, name: 4, label: "Metodos Ágiles", shape: forma1, hidden: true },
+      { id: 402, level: 2, name: 4, label: "Historias de usuarios", shape: forma1, hidden: true },
 
 
       //--------------------------------
       //temas especificos Mantenimiento de software/Mantenimiento
-      { id: 1011, level: 3, label: "Lista de chequeo de lectura\n100%", shape: forma1, hidden: true },
-      { id: 1012, level: 3, label: "material sobre mantenimiento de software\n100%", shape: forma1, hidden: true },
-      { id: 1013, level: 3, label: "preguntas sobre mantenimiento\n100%", shape: forma1, hidden: true },
-      { id: 1014, level: 3, label: "taller mantenimiento\n100%", shape: forma1, hidden: true },
-      { id: 1015, level: 3, label: "Documento/apoyo\n100%", shape: forma1, hidden: true },
+      { id: 1011, level: 3, name: 1, label: "Lista de chequeo de lectura\n100%", shape: forma1, hidden: true },
+      { id: 1012, level: 3, name: 1, label: "material sobre mantenimiento de software\n100%", shape: forma1, hidden: true },
+      { id: 1013, level: 3, name: 1, label: "preguntas sobre mantenimiento\n100%", shape: forma1, hidden: true },
+      { id: 1014, level: 3, name: 1, label: "taller mantenimiento\n100%", shape: forma1, hidden: true },
+      { id: 1015, level: 3, name: 1, label: "Documento/apoyo\n100%", shape: forma1, hidden: true },
 
       //temas especificos Mantenimiento de software/Análisis estático de código
-      { id: 1021, level: 3, label: "Lista de chequeo de lectura\n100%", shape: forma1, hidden: true },
-      { id: 1022, level: 3, label: "Presentación Análisis estático de código\n100%", shape: forma1, hidden: true },
-      { id: 1023, level: 3, label: "Video Análisis Estático de Código\n100%", shape: forma1, hidden: true },
-      { id: 1024, level: 3, label: "Apuntes sobre Análisis estático\n100%", shape: forma1, hidden: true },
-      { id: 1025, level: 3, label: "Taller Análisis Estático de Código\n100%", shape: forma1, hidden: true },
+      { id: 1021, level: 3, name: 1, label: "Lista de chequeo de lectura\n100%", shape: forma1, hidden: true },
+      { id: 1022, level: 3, name: 1, label: "Presentación Análisis estático de código\n100%", shape: forma1, hidden: true },
+      { id: 1023, level: 3, name: 1, label: "Video Análisis Estático de Código\n100%", shape: forma1, hidden: true },
+      { id: 1024, level: 3, name: 1, label: "Apuntes sobre Análisis estático\n100%", shape: forma1, hidden: true },
+      { id: 1025, level: 3, name: 1, label: "Taller Análisis Estático de Código\n100%", shape: forma1, hidden: true },
 
       //temas especificos Mantenimiento de software/Refactorizacion
-      { id: 1031, level: 3, label: "Lista de chequeo de lectura - Refactorización\n100%", shape: forma1, hidden: true },
-      { id: 1032, level: 3, label: "Presentación Malos olores de código\n100%", shape: forma1, hidden: true },
-      { id: 1033, level: 3, label: "Video Malos Olores del Código\n100%", shape: forma1, hidden: true },
-      { id: 1034, level: 3, label: "Presentación Refactorización\n100%", shape: forma1, hidden: true },
-      { id: 1035, level: 3, label: "Enlace a un catálogo de malos olores de código\n100%", shape: forma1, hidden: true },
-      { id: 1036, level: 3, label: "Enlace al catálogo de refactorizaciones\n100%", shape: forma1, hidden: true },
-      { id: 1037, level: 3, label: "Taller Refactorización\n100%", shape: forma1, hidden: true },
-      { id: 1038, level: 3, label: "Taller Refactorización 2\n100%", shape: forma1, hidden: true },
+      { id: 1031, level: 3, name: 1, label: "Lista de chequeo de lectura - Refactorización\n100%", shape: forma1, hidden: true },
+      { id: 1032, level: 3, name: 1, label: "Presentación Malos olores de código\n100%", shape: forma1, hidden: true },
+      { id: 1033, level: 3, name: 1, label: "Video Malos Olores del Código\n100%", shape: forma1, hidden: true },
+      { id: 1034, level: 3, name: 1, label: "Presentación Refactorización\n100%", shape: forma1, hidden: true },
+      { id: 1035, level: 3, name: 1, label: "Enlace a un catálogo de malos olores de código\n100%", shape: forma1, hidden: true },
+      { id: 1036, level: 3, name: 1, label: "Enlace al catálogo de refactorizaciones\n100%", shape: forma1, hidden: true },
+      { id: 1037, level: 3, name: 1, label: "Taller Refactorización\n100%", shape: forma1, hidden: true },
+      { id: 1038, level: 3, name: 1, label: "Taller Refactorización 2\n100%", shape: forma1, hidden: true },
 
 
       //temas especificos Mantenimiento de software/Refactorizacion
-      { id: 1041, level: 3, label: "ista de chequeo de lectura - Métricas básicas de código\n100%", shape: forma1, hidden: true },
-      { id: 1042, level: 3, label: "Material sobre métricas básicas (de código)Archivo\n100%", shape: forma1, hidden: true },
-      { id: 1043, level: 3, label: "Taller Métricas básicas de código\n100%", shape: forma1, hidden: true },
+      { id: 1041, level: 3, name: 6, label: "ista de chequeo de lectura - Métricas básicas de código\n100%", shape: forma1, hidden: true },
+      { id: 1042, level: 3, name: 6, label: "Material sobre métricas básicas (de código)Archivo\n100%", shape: forma1, hidden: true },
+      { id: 1043, level: 3, name: 6, label: "Taller Métricas básicas de código\n100%", shape: forma1, hidden: true },
+
+
     ]);
 
 
@@ -347,83 +349,200 @@ layout: {
     }
 
 
-    //solo funciona para los  del primer nivel
-    //recibe una lista, y el id
-    function OcultarNodos(IdNodo) {
-      var edgesEvento;//los Id de las conexiones que interactuan 
-      var nodesEvento;//Los Id de los nodos que interactuan con el evento
-
-      //sacamos primero lista de conexiones que interactuan con el evento
-      edgesEvento = ListaIdEdgesEvento(IdNodo);
-      nodesEvento = ListaIdNodosEvento(edgesEvento);
-
-      //console.log("____lineas____", edgesEvento)
-      //console.log("____Nodes____", nodesEvento)
-
-      var inicialLevel = getLevel(nodesEvento);
-      var UltimoLevel = getLevel(nodesEvento[nodesEvento.length - 1]);
-      //console.log("Ultimo level ", UltimoLevel, " nodoID: ", IdNodo, "  ", getLevel(IdNodo));
-
-      //primero tenemos que actualizar los nodos Hidden=true
-      for (var i = 0; i < nodesEvento.length; i++) {
-
-        console.log("R ", IdNodo, " hijos: ", quienesSonLosHijosLineas(nodesEvento[i]), "true or false:", nodes.get(edges.get(quienesSonLosHijosLineas(nodesEvento[i])[0]).to).hidden)
-        if (nodes.get(edges.get(quienesSonLosHijosLineas(nodesEvento[i])[0]).to).hidden == false) {
-          console.log("++++antes de recursividad ", nodesEvento);
-          OcultarNodos(nodesEvento[i]);
-          console.log("-----despues de recursividad ", nodesEvento);
-        }
-
-        //if (getLevel(nodesEvento[i]) == UltimoLevel) {
-        //console.log("llamado:  ", i, nodesEvento[i], " tienen hijos? ", quienesSonLosHijosLineas(nodesEvento[i]));
-        nodes.update([
-          { id: nodesEvento[i], hidden: !nodes.get(nodesEvento[i]).hidden },
-        ])
-
-        //}
-      }
-      //como 2 paso tenemos que mostrar las conexiones 
-      for (var i = 0; i < edgesEvento.length; i++) {
-        var conexionAotro = getLevel(edges.get(edgesEvento[i]).to);
-        //if (conexionAotro == UltimoLevel) {
-        edges.update([
-          { id: edgesEvento[i], hidden: !edges.get(edgesEvento[i]).hidden },
-        ])
-        //}
-      }
-      network.fit();
-    }
-
-
-
     /*
-           * Obtener todos los nodos secundarios
-           * red: objeto gráfico
-           * _thisNode: el nodo en el que se hizo clic (nodo principal)
-           * _Allnodes: utilizado para contener la matriz de ID de nodo secundario
-     * */
+        * Obtener todos los nodos secundarios con un nivel superior al padre, para evitar ocultar vecinos
+        * red: objeto gráfico
+        * _thisNode: el nodo en el que se hizo clic (nodo principal)
+        * _Allnodes: utilizado para contener la matriz de ID de nodo secundario
+  * */
     function getAllChilds(network, _thisNode, _Allnodes) {
       var _nodes = network.getConnectedNodes(_thisNode, "to");
       if (_nodes.length > 0) {
         for (var i = 0; i < _nodes.length; i++) {
+          //console.log("raiz: ", _thisNode, " Nodo: ", _nodes[i], "   ", nodes.get(_nodes[i]).level, "  > ", nodes.get(_thisNode).level);
+          // if (nodes.get(_nodes[i]).level > nodes.get(_thisNode).level) {
           getAllChilds(network, _nodes[i], _Allnodes);
           _Allnodes.push(_nodes[i]);
+          //}
         }
       }
       return _Allnodes
     };
 
-    network.on("click", function (e) {
+    function getAllChildsEdgesN(network, _thisEdges, _EdgesN) {
+      var _Edges = network.getConnectedEdges(_thisEdges, "to");
+    /*  if (_Edges.length > 0) {
+        for (var i = 0; i < _Edges.length; i++) {
+          //console.log("raiz: ", _thisEdges, " Nodo: ", _Edges[i], "   ", nodes.get(_Edges[i]).level, "  > ", nodes.get(_thisNode).level);
+         // if (nodes.get(_Edges[i]).level > nodes.get(_thisEdges).level) {
+            getAllChildsEdgesN(network, _Edges[i], _EdgesN);
+            _EdgesN.push(_Edges[i]);
+          //}
+        }
+      }
+     */ return _Edges
+    };
 
-      if (e.edges.length > 0) {
+    function nodoHijosLevelSuperior(nodos, NodeRaiz) {
+      var nodosTemps = [];
+      for (let i = 0; i < nodos.length; i++) {
+        //console.log("***"+nodes.get(nodos[i]).level+ ">"+1);
+        if (nodes.get(nodos[i]).level > nodes.get(NodeRaiz).level && nodes.get(nodos[i]).name == nodes.get(NodeRaiz).name) {
+          nodosTemps.push(nodos[i]);
+        }
 
-        OcultarNodos(e.nodes[0]);
+      }
+      return nodosTemps;
+
+
+    }
+    function EdgesAllConectToNodesChild(NodosHijos, edgesHijos) {
+      var EdgesOfAllChild = edgesHijos;
+      for (let x = 0; x < NodosHijos.length; x++) {
+        var response = getAllChildsEdgesN(network, NodosHijos[x], []);
+        for (let y = 0; y < response.length; y++) {
+          EdgesOfAllChild.push(response[y]);
+
+        }
+
       }
 
+
+      return EdgesOfAllChild;
+
+    }
+
+
+
+
+    //solo funciona para los  del primer nivel
+    //recibe una lista, y el id
+    function mostrarNodos(IdNodo) {
+
+      var edgesEvento;//los Id de las conexiones que interactuan 
+      var nodesEvento;//Los Id de los nodos que interactuan con el evento
       var nodosN = []
+      var allchild = getAllChilds(network, IdNodo, nodosN);
+      console.log("Lista Hijos Metodo ocultar: " + allchild);
+      console.log("NodoEspcifico:" + allchild[0])
+      if (nodes.get(allchild[0]).hidden == true) {
+
+
+      }
+
+
+
+      //sacamos primero lista de conexiones que interactuan con el evento
+      edgesEvento = ListaIdEdgesEvento(IdNodo);
+      nodesEvento = ListaIdNodosEvento(edgesEvento);
+      //primero tenemos que actualizar los nodos Hidden=true
+      for (var i = 0; i < nodesEvento.length; i++) {
+         nodes.update([
+          { id: nodesEvento[i], hidden: !nodes.get(nodesEvento[i]).hidden },
+        ])
+      }
+      //como 2 paso tenemos que mostrar las conexiones 
+      for (var i = 0; i < edgesEvento.length; i++) {
+        edges.update([
+          { id: edgesEvento[i], hidden: !edges.get(edgesEvento[i]).hidden },
+        ])
+      }
+  
+    }
+
+    function escogerNodoPreguntarSiesVisible(nodosHijosArray, NodoRaiz) {
+      for (let r = 0; r < nodosHijosArray.length; r++) {
+        if (nodes.get(nodosHijosArray[r]).level == nodes.get(NodoRaiz).level + 1) {
+          return nodosHijosArray[r];
+        }
+      }
+      return null;
+    }
+
+
+    function ocultarNodos(NodoRaiz) {
+
+      var nodosN2 = []
+      var _EdgesN2 = []
+
+      var nodosOcultar = getAllChilds(network, NodoRaiz, nodosN2);
+      //se obtiene son las lineas de un solo nodo
+      var LineasOcultar = getAllChildsEdgesN(network, NodoRaiz, _EdgesN2);
+
+      //obtenemos los que son de nivel superior para saber cuantos tiene
+      nodosN2 = nodoHijosLevelSuperior(nodosN2, nodes.get(NodoRaiz).level);
+      _EdgesN2 = EdgesAllConectToNodesChild(nodosN2, _EdgesN2);
+
+      for (var i = 0; i < nodosN2.length; i++) {
+        nodes.update([
+          { id: nodosN2[i], hidden: true },
+        ])
+      }
+      for (let e = 0; e < _EdgesN2.length; e++) {
+        edges.update([
+          { id: _EdgesN2[e], hidden: true },
+        ])
+        
+      }
+
+      
+
+      
+
+    
+
+
+
+    }
+
+    function administrarNodos(network,NodoRaiz, nodosN) {
+      var nodosN2 = []
+      var _EdgesN2 = []
+
+
+      
+      getAllChilds(network, NodoRaiz, nodosN2);
+      //se obtiene son las lineas de un solo nodo
+      getAllChildsEdgesN(network, NodoRaiz, _EdgesN2);
+
+      //obtenemos los que son de nivel superior para saber cuantos tiene
+      nodosN2 = nodoHijosLevelSuperior(nodosN2, nodes.get(NodoRaiz).level);
+      _EdgesN2 = EdgesAllConectToNodesChild(nodosN2, _EdgesN2);
+
+
+
+      if (nodes.get(escogerNodoPreguntarSiesVisible(nodosN2, NodoRaiz)).hidden == false) {
+        ocultarNodos(NodoRaiz);
+      } else {
+        mostrarNodos(NodoRaiz);
+      }
+
+      network.fit();
+
+
+
+    }
+
+    network.on("click", function (e) {
+      var nodosN = []
+      var _EdgesN = []
+      if (e.edges.length > 0) {
+
+        //OcultarNodos(e.nodes[0]);
+        //ocultarNodos(e.nodes[0]);
+        administrarNodos(network, e.nodes[0], nodosN);
+      }
+
+    
       console.log("Los hijos de ", e.nodes[0], "son", getAllChilds(network, e.nodes[0], nodosN));
+
+      console.log("Los hijos conexiones", e.nodes[0], "son", getAllChildsEdgesN(network, e.nodes[0], _EdgesN));
       //console.log("datos 3: ", edges);
       //console.log(e.nodes);
+
+      console.log("hijos level superior: " + nodoHijosLevelSuperior(nodosN, e.nodes[0].level));
+
+
 
     },
     );
