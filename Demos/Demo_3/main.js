@@ -1,3 +1,21 @@
+function obtenerColor(porcentaje) {
+    let color = "";
+
+    if (porcentaje <= 0) {
+        color = color1;
+    } else if (porcentaje < 30) {
+        color = color2;
+    } else if (porcentaje < 60) {
+        color = color3;
+    } else if (porcentaje < 90) {
+        color = color4;
+    } else if (porcentaje >= 90) {
+        color = color5;
+    }
+
+    return color;
+}
+
 function readNodes(json) {
     let nodes = [];
 
@@ -6,35 +24,23 @@ function readNodes(json) {
         level: 0,
         label: json.name1,
         hidden: true,
-        name:0
+        name: 0
     });
 
     for (const node of json.nodes) {
-        let color = "";
         let porcentaje = node.percentage.slice(0, -1) * 1;
-
-        if (porcentaje <= 0) {
-            color = color1;
-        } else if (porcentaje < 30) {
-            color = color2;
-        } else if (porcentaje < 60) {
-            color = color3;
-        } else if (porcentaje < 90) {
-            color = color4;
-        } else if (porcentaje >= 90) {
-            color = color5;
-        }
+        let color = obtenerColor(porcentaje);
 
         nodes.push({
             id: node.id,
             level: node.level,
-            name:node.name,
+            name: node.name,
             label: `${node.label}\n${node.percentage}`,
             hidden: (node.level > 1) ? true : false,
             shape: forma1,
             fixed: true,
             color: { background: color }
-            
+
         });
     }
 
@@ -49,7 +55,7 @@ function readEdges(json) {
             from: edge.from,
             to: edge.to,
             hidden: (edge.from > 0) ? true : false,
-            name:edge.name
+            name: edge.name
         });
     }
 
@@ -61,7 +67,7 @@ var container = document.getElementById('mynetwork');
 var nodes = new vis.DataSet(readNodes(json_ejemplo));
 var edges = new vis.DataSet(readEdges(json_ejemplo));
 
-console.log("nodes: "+readEdges(json_ejemplo));
+console.log("nodes: " + readEdges(json_ejemplo));
 
 var data = {
     nodes: nodes,

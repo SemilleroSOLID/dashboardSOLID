@@ -1,5 +1,5 @@
-var Nodesjs=window.nodes;
-var Edgesjs=window.edges;
+var Nodesjs = window.nodes;
+var Edgesjs = window.edges;
 
 
 /**
@@ -182,16 +182,16 @@ function hideNodes(nodeRoot) {
  * @param:nodeRoot: el nodo en el que se hizo clic (nodo principal)
  * @author Sebastian Agudelo
  */
-function manageNodesHideOrView(network, nodeRoot,nodes,edges) {
+function manageNodesHideOrView(network, nodeRoot, nodes, edges) {
   var nodeChildsAll = nodeChildLevelTop(
     getAllChilds(network, nodeRoot, []),
     nodeRoot
   );
   if (isAnyNodeVisible(nodeChildsAll, nodeRoot) == false) {
-    console.log("___________Hide____________"+nodes);
+    console.log("___________Hide____________" + nodes);
     hideNodes(nodeRoot);
   } else {
-    console.log("___________view____________"+edges);
+    console.log("___________view____________" + edges);
     viewNode(nodeRoot);
   }
   network.fit();
@@ -203,7 +203,7 @@ function manageNodesHideOrView(network, nodeRoot,nodes,edges) {
 
 network.on("click", function (e) {
   if (e.nodes.length != 0) {
-    manageNodesHideOrView(network, e.nodes[0],nodes,edges);
+    manageNodesHideOrView(network, e.nodes[0], nodes, edges);
   }
 });
 
