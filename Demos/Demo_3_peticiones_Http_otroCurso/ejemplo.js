@@ -2,7 +2,8 @@
 var json_ejemplo={} ;
 
 function Get(){
-  const url = 'https://raw.githubusercontent.com/SemilleroSOLID/dashboardSOLID/main/Demos/Demo_3_peticiones_Http/exampleJson.json'
+  //const url = 'https://raw.githubusercontent.com/SemilleroSOLID/dashboardSOLID/main/Demos/Demo_3_peticiones_Http/exampleJson.json'
+ const url='https://raw.githubusercontent.com/SemilleroSOLID/dashboardSOLID/main/Demos/Demo_3_peticiones_Http_otroCurso/OtherExampleJson2.json';
   const http = new XMLHttpRequest()
   
   http.open('GET',url);
