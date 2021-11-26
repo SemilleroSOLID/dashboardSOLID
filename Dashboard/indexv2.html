@@ -282,7 +282,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">TABLERO DE CONTROL - Software</h1>
+              <h1 class="m-0">TABLERO DE CONTROL</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
@@ -336,110 +336,68 @@
       </div>
       <!--fin modal insignias-->
 
+
+      <!-- Tipo biblioteca-->
+
+
+
+      <!-- datos para pruebas-->
+
+
+
+      <!-- fin-->
       <!-- Main content -->
-      <section class="content" style="">
+      <section class="content">
         <div class="container-fluid">
           <!-- Small boxes (Stat box) -->
           <!--insignias tarjetas-->
-          <div class="row">
-            <!--<button type="button" id="btnModal" class="" style="text-align: center;">-->
-            <div class="col-lg-2 col-7"  id="btnModal">
-              <!-- small box -->
 
-              <div class="small-box bg-info">
-                <div class="inner">
-                  <img src="img/puntual.png" class="insignias_img">
-                </div>
-                <div class="icon">
-                  <!--<i class="fa fa-book"></i>-->
-                </div>
-                <div class="row">
-                  <a href="#" class="col-10 small-box-footer"
-                    style="text-align: center;font-size:5vh;color: blanchedalmond;"> Puntual </a>
-                    <!--
-                    <button type="menu" id="btnModal" class="col-2" style="text-align: center"><i
-                      class="fas fa fa-plus-square" style="font-size:2vh;color:black;"></i></button>-->
-                </div>
 
-              </div>
-             <!-- </button>-->
-            </div>
-
-            <!-- ./col -->
-            <div class="col-lg-2 col-6" id="btnModal">
-              <!-- small box -->
-              <div class="small-box bg-success">
-                <div class="inner">
-                  <img src="img/ordenado.png" class="insignias_img">
-                </div>
-                <div class="icon">
-                  <i class="ion ion-stats-bars"></i>
-                </div>
-                <div class="row">
-                  <a href="#" class="col-10 small-box-footer"
-                    style="text-align: center;font-size:5vh;color: blanchedalmond;"> Puntual </a>
-
-                </div>
-              </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-2 col-6" id="btnModal">
-              <!-- small box -->
-              <div class="small-box bg-warning">
-                <div class="inner">
-                  <img src="img/conquistador.png" class="insignias_img">
-                </div>
-                <div class="icon">
-                  <i class="ion ion-person-add"></i>
-                </div>
-                <div class="row">
-                  <a href="#" class="col-10 small-box-footer"
-                    style="text-align: center;font-size:5vh;color: blanchedalmond;"> Puntual </a>
-
-                </div>
-              </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-2 col-6" id="btnModal">
-              <!-- small box -->
-              <div class="small-box bg-danger">
-                <div class="inner">
-                  <img src="img/puntual.png" class="insignias_img">
-                </div>
-                <div class="icon">
-                  <i class="ion ion-pie-graph"></i>
-                </div>
-                <div class="row">
-                  <a href="#" class="col-10 small-box-footer"
-                    style="text-align: center;font-size:5vh;color: blanchedalmond;"> Puntual </a>
-
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-7 small-box bg-danger" style="">
-              <h1 style="text-align: center;">Porcentaje</h1>
-              <!--<canvas height="90%" id="myChart"></canvas>-->
-              <div style="text-align: center;">
-                <h1>80%</h1>
-              </div>
-              <div class="" style="text-align: center;">
-                <progress id="html5" max="100" value="91"></progress>
-                <span></span>
-              </div>
-              <!--<p>los datos aquí contenidos son aproximados</p>-->
-            </div>
-            <!-- ./col -->
-          </div>
           <!-- /.row -->
           <!-- Main row -->
           <div class="row">
+            <section class="col-lg-4 connectedSortable">
+
+
+              <div class="card  mb-10" style="max-width: 105vh;">
+                <div class="card-header" style="text-align: center;">PUNTUAL</div>
+                <!--<h5 class="row card-title center" >Puntual</h5>-->
+                <div class="card-body" style="text-align: center;">
+
+                  <div class="row bg-success" style="">
+                    <img src="img/puntual.png" class="insignias_img text-align:center; center">
+                  </div>
+                  <div class="row center">
+                    <button style="background-color: Transparent;" class="bg-info"  id="btnModal"><img src="img/conquistador.png"
+                        style="height: 10vh;" ></button>
+                    <button style="background-color: Transparent;" class="bg-danger" id="btnModal"><img src="img/ordenado.png" class=""
+                        style="height: 10vh;"></button>
+                    <button style="background-color: Transparent;" class="bg-warning" id="btnModal"><img src="img/puntual.png" class=""
+                        style="height: 10vh;"></button>
+                    <button style="background-color: Transparent;" class="bg-info" id="btnModal"><img src="img/conquistador.png" class=""
+                        style="height: 10vh;"></button>
+                    <button style="background-color: Transparent;" class="bg-danger" id="btnModal"><img src="img/ordenado.png" class=""
+                        style="height: 10vh;"></button>
+                    <button style="background-color: Transparent;" class="bg-info" id="btnModal"><img src="img/puntual.png" class=""
+                        style="height: 10vh;"></button>
+                        <button style="background-color: Transparent;" class="bg-info" id="btnModal"><img src="img/ordenado.png" class=""
+                          style="height: 10vh;"></button>
+
+                  </div>
+
+                </div>
+              </div>
+
+            </section>
+
+
+
             <!-- Left col -->
-            <section class="col-lg-12 connectedSortable">
+            <section class="col-lg-8 connectedSortable">
               <!-- Custom tabs (Charts with tabs)-->
               <div class="card">
-                <!--<div class="card-header" style="background-color: blue;">
-                 <h3 class="card-title">
+                <div class="card-header">
+                  <h3 class="card-title">
                     <i class="fas fa-chart-pie mr-1"></i>
                     Software
                   </h3>
@@ -455,21 +413,20 @@
 
                     </ul>
                   </div>
-
                 </div><!-- /.card-header -->
                 <div class="card-body">
                   <div class="tab-content p-0">
                     <!-- Morris chart - Sales -->
-                    <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;">
+                    <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 500px;">
                       <!--  <canvas id="revenue-chart-canvas" height="300" style="height: 300px;" ></canvas>
                      -->
-                      <iframe id="viewport" class="col-lg-12" style="height: 300px;"
+                      <iframe id="viewport" class="col-lg-12" style="height: 700vh;width: 700vh;"
                         src="modules/Demo_3_peticiones_Http/index.html"></canvas>
 
                       </iframe>
                     </div>
-                    <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
-                      <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>
+                    <div class="chart tab-pane" id="sales-chart" style="position: relative; height:500px;">
+                      <canvas id="sales-chart-canvas" height="500" style="height: 500px;"></canvas>
                     </div>
                   </div>
                 </div><!-- /.card-body -->
@@ -1013,44 +970,6 @@
   <script src="dist/js/pages/dashboard.js"></script>
   <!-- para las insignias -->
   <script src="js/js.js"></script>
-
-
-  <script src="chart.js"></script>
-  <script>
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var chart = new Chart(ctx, {
-      type: 'doughnut',
-      data: {
-        datasets: [{
-          data: [60, 40],
-          backgroundColor: ['#42a5f5', 'red', 'green', 'blue', 'violet'],
-          label: 'Comparacion de navegadores'
-        }],
-        labels: []
-      },
-      options: { responsive: true, labels: false }
-    });
-  </script>
-
-
-  <script type="text/javascript">
-
-    window.onload = function () {
-
-      animateprogress("#html5", 91);
-
-
-    }
-    document.querySelector("#boton").addEventListener("click", function () {
-      animateprogress("#html5", 91);
-    });
-  </script>
-  <script src="/animateprogress.js">
-    window.onload = function () {
-      animateprogress("#html5", 91);
-    }
-  </script>
-
 </body>
 
 </html>
