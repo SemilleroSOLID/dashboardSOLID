@@ -76,8 +76,8 @@ function InitMain() {
   };
 
   var options = {
-    width: width + "px",
-    height: screen.height/1.5+"px",
+    width: "1450px",
+    height: "450px",
     edges: {
       smooth: { type: "straightCross" },
     },
