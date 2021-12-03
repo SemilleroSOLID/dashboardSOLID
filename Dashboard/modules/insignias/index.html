@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Ejemplo Básico - Insignias</title>
+
+  <link rel="stylesheet" href="main.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Cabin+Condensed:700' rel='stylesheet' type='text/css'>
+</head>
+
+<body onload="Get()">
+
+  <div class="container-fluid">
+    <!-- Small boxes (Stat box) -->
+    <!--insignias tarjetas-->
+    <div class="row">
+      <div class="col-lg-2 col-7 btnModal" data-toggle="modal" data-target="#puntualModal">
+        <div class="small-box bg-info">
+          <div class="inner">
+            <img src="img/puntual.png" class="insignias_img">
+          </div>
+          <div class="row">
+            <a href="#" class="col-10 small-box-footer"
+              style="text-align: center;font-size:3vh;color: blanchedalmond;">Puntual</a>
+          </div>
+        </div>
+        <!-- </button>-->
+      </div>
+
+      <!-- ./col -->
+      <div class="col-lg-2 col-6" id="btnModal">
+        <!-- small box -->
+        <div class="small-box bg-success" data-toggle="modal" data-target="#conquistadorModal">
+          <div class="inner">
+            <img src="img/conquistador.png" class="insignias_img">
+          </div>
+          <div class="row">
+            <a href="#" class="col-10 small-box-footer"
+              style="text-align: center;font-size:3vh;color: blanchedalmond;">Conquistador</a>
+
+            <button type="button" class="col-2" style="text-align: center"><i class="fas fa fa-plus-square"
+                style="font-size:2vh;color:black;"></i></button>
+          </div>
+        </div>
+      </div>
+      <!-- ./col -->
+      <div class="col-lg-2 col-6" id="btnModal">
+        <!-- small box -->
+        <div class="small-box bg-warning">
+          <div class="inner">
+            <img src="img/brillante.png" class="insignias_img">
+          </div>
+          <div class="row">
+            <a href="#" class="col-10 small-box-footer"
+              style="text-align: center;font-size:3vh;color: blanchedalmond;">Brillante</a>
+          </div>
+        </div>
+      </div>
+      <!-- ./col -->
+      <div class="col-lg-2 col-6" id="btnModal">
+        <!-- small box -->
+        <div class="small-box bg-danger">
+          <div class="inner">
+            <img src="img/estudioso.png" class="insignias_img">
+          </div>
+          <div class="row">
+            <a href="#" class="col-10 small-box-footer"
+              style="text-align: center;font-size:3vh;color: blanchedalmond;">Estudioso</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-7 small-box text-dark">
+        <h1 style="text-align: center;">Porcentaje</h1>
+        <!--<canvas height="90%" id="myChart"></canvas>-->
+        <div style="text-align: center;">
+          <h1>80%</h1>
+        </div>
+        <div class="" style="text-align: center;">
+          <progress id="html5" max="100" value="91"></progress>
+          <span></span>
+        </div>
+        <!--<p>los datos aquí contenidos son aproximados</p>-->
+      </div>
+      <!-- ./col -->
+    </div>
+    <!-- /.row -->
+    <!-- Main row -->
+    <div class="row">
+      <!-- Left col -->
+      <section class="col-lg-12 connectedSortable">
+        <!-- Custom tabs (Charts with tabs)-->
+        <div class="card">
+          <div class="card-body">
+            <div class="tab-content p-0">
+              <!-- Morris chart - Sales -->
+              <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 500px;">
+                <!--  <canvas id="revenue-chart-canvas" height="300" style="height: 500px;" ></canvas>
+               -->
+                <iframe id="viewport" class="col-lg-12" style="height: 500px;" src="modules/grafo/index.html"></iframe>
+              </div>
+              <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 500px;">
+                <canvas id="sales-chart-canvas" height="300" style="height: 500px;"></canvas>
+              </div>
+            </div>
+          </div><!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+    <!-- /.row (main row) -->
+  </div><!-- /.container-fluid -->
+  
+  <script src="ejemplo.js"></script>
+  <script src="main.js"></script>
+  <script src="ManageViewOrHideNode.js"></script>
+
+    <!-- Inicio insignias, Modals -->
+
+  <!-- Inicio, Modal 1 -->
+  <div class="modal fade" id="puntualModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Puntual</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="inner">
+            <img src="img/puntual.png" class="insignias_img">
+            <br><br><br>
+          </div>
+          <div class="row mt-2">
+            <div class="col-6">
+              <h4>Descripcion</h4>
+              <br>
+              <p>
+                Esta insignia es un reconocimiento a la puntualidad de nuestros estudiantes, otorgada sólo a aquellos
+                que entreguen todos sus trabajos y realicen todas las actividades a tiempo.
+                <br><br>
+                Para ganar esta insignia debes completar un total de 100 puntos en el atributo de <b>puntualidad</b>.
+                Actualmente tienes XX puntos y te faltan XX para obtener esta insignia.
+              </p>
+            </div>
+            <div class="col-6">
+              <h4>¿Como ganar más puntos?</h4>
+              <br>
+              <p>
+                Para obtener más puntos y así poder ganar esta insignia debes presentar todos tus trabajos y actividades
+                en
+                la fecha estimada para ello o antes. Si presentas un trabajo o actividad el día de entrega se sumarán 5
+                puntos para la obtención de esta insignia, si lo entregas antes se sumarán 10 puntos, y si por el
+                contrario
+                lo entregas después se restará 5 puntos.
+                <br><br>
+                Esto es todo lo que debes saber para lograr este reconocimiento.
+                <br><br>
+                ¡Ánimo!, demuéstrale a tus compañeros que puedes obtener todas las insignias.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fin, Modal 1-->
+
+  <!-- Inicio, Modal 2 -->
+  <div class="modal fade" id="conquistadorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Conquistador</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="inner">
+            <img src="img/conquistador.png" class="insignias_img">
+            <br><br><br>
+          </div>
+          <div class="row mt-2">
+            <div class="col-6">
+              <h4>Descripcion</h4>
+              <br>
+              <p>
+                Esta insignia es un reconocimiento a la puntualidad de nuestros estudiantes, otorgada sólo a aquellos
+                que entreguen todos sus trabajos y realicen todas las actividades a tiempo.
+                <br><br>
+                Para ganar esta insignia debes completar un total de 100 puntos en el atributo de <b>puntualidad</b>.
+                Actualmente tienes XX puntos y te faltan XX para obtener esta insignia.
+              </p>
+            </div>
+            <div class="col-6">
+              <h4>¿Como ganar más puntos?</h4>
+              <br>
+              <p>
+                Para obtener más puntos y así poder ganar esta insignia debes presentar todos tus trabajos y actividades
+                en
+                la fecha estimada para ello o antes. Si presentas un trabajo o actividad el día de entrega se sumarán 5
+                puntos para la obtención de esta insignia, si lo entregas antes se sumarán 10 puntos, y si por el
+                contrario
+                lo entregas después se restará 5 puntos.
+                <br><br>
+                Esto es todo lo que debes saber para lograr este reconocimiento.
+                <br><br>
+                ¡Ánimo!, demuéstrale a tus compañeros que puedes obtener todas las insignias.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fin, Modal 2-->
+
+  <!-- Fin insignias, Modals -->
+</body>
+
+</html>
