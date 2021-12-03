@@ -1,4 +1,4 @@
-function Get() {
+function Get_Insignias() {
   objJSON = JSON.parse(json);
   console.log(objJSON);
 

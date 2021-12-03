@@ -15,7 +15,7 @@
   cursor: pointer;
 }
 
-a {
+.row_insignias a {
   text-decoration: none;
   font-weight: bold;
   text-align: center;

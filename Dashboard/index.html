@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Semillero Solid | Dashboard</title>
 
+  <link rel="shortcut icon" href="dist/img/AdminLTELogo.png" type="image/x-icon">
+
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -27,9 +29,12 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+
+  <!-- Modulo de Insignias -->
+  <link rel="stylesheet" href="modules/insignias/insignias.css">
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed" onload="Get_Insignias()">
   <div class="wrapper">
 
     <!-- Preloader -->
@@ -166,8 +171,61 @@
         <div class="container-fluid">
           <!-- Small boxes (Stat box) -->
           <!-- INSIGNIAS tarjetas-->
-          <div class="row">
-            <iframe class="col-lg-12" src="modules/insignias/index.html"></iframe>
+          <div class="row row_insignias">
+            <!--iframe class="col-lg-12" src="modules/insignias/index.html"></iframe-->
+            <div class="col-lg-2 col-7 btnModal" data-toggle="modal" data-target="#puntualModal">
+              <div class="small-box bg-info">
+                <div class="inner">
+                  <img src="modules/insignias/img/puntual.png" class="insignias_img">
+                </div>
+                <div class="row">
+                  <a href="#" class="col-10 small-box-footer">Puntual</a>
+                </div>
+              </div>
+            </div><!-- ./col -->
+            <div class="col-lg-2 col-6 btnModal">
+              <div class="small-box bg-success" data-toggle="modal" data-target="#conquistadorModal">
+                <div class="inner">
+                  <img src="modules/insignias/img/conquistador.png" class="insignias_img">
+                </div>
+                <div class="row">
+                  <a href="#" class="col-10 small-box-footer">Conquistador</a>
+                </div>
+              </div>
+            </div><!-- ./col -->
+            <div class="col-lg-2 col-6 btnModal" data-toggle="modal" data-target="#brillanteModal">
+              <div class="small-box bg-warning">
+                <div class="inner">
+                  <img src="modules/insignias/img/brillante.png" class="insignias_img">
+                </div>
+                <div class="row">
+                  <a href="#" class="col-10 small-box-footer">Brillante</a>
+                </div>
+              </div>
+            </div><!-- ./col -->
+            <div class="col-lg-2 col-6 btnModal" data-toggle="modal" data-target="#estudiosoModal">
+              <div class="small-box bg-danger">
+                <div class="inner">
+                  <img src="modules/insignias/img/estudioso.png" class="insignias_img">
+                </div>
+                <div class="row">
+                  <a href="#" class="col-10 small-box-footer">Estudioso</a>
+                </div>
+              </div>
+            </div><!-- ./col -->
+            <!-- Columna porcentaje-->
+            <div class="col-lg-4 col-7 small-box text-dark">
+              <h1 style="text-align: center;">Porcentaje</h1>
+              <div style="text-align: center;">
+                <h1>80%</h1>
+              </div>
+              <div class="" style="text-align: center;">
+                <progress id="html5" max="100" value="91"></progress>
+                <span></span>
+              </div>
+              <!--<p>Los datos aquí contenidos son aproximados</p>-->
+            </div><!-- ./col -->
+
           </div>
           <!-- /.row INSIGNIAS -->
           <!-- Main row, GRAFO -->
@@ -233,6 +291,220 @@
   <script src="dist/js/demo.js"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="dist/js/pages/dashboard.js"></script>
+
+  <!-- JS -->
+  <script src="modules/insignias/insignias.js"></script>
+  <script src="modules/insignias/ejemplo.js"></script>
+
+  <!-- Inicio insignias, Modals -->
+
+  <!-- Inicio, Modal 1 -->
+  <div class="modal fade" id="puntualModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Puntual</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="inner">
+            <img src="modules/insignias/img/puntual.png" class="insignias_img">
+            <br><br><br>
+          </div>
+          <div class="row mt-2">
+            <div class="col-6">
+              <h4>Descripción</h4>
+              <br>
+              <p>
+                Esta insignia es un reconocimiento a la puntualidad de nuestros estudiantes, otorgada sólo a aquellos
+                que entreguen todos sus trabajos y realicen todas las actividades a tiempo.
+                <br><br>
+                Para ganar esta insignia debes completar un total de 100 puntos en el atributo de <b>puntualidad</b>.
+                <br><br>
+                Actualmente tienes <span class="puntos_obtenidos">XX</span> puntos y te faltan <span
+                  class="puntos_restantes">XX</span> para obtener esta insignia.
+              </p>
+            </div>
+            <div class="col-6">
+              <h4>¿Como ganar más puntos?</h4>
+              <br>
+              <p>
+                Para obtener más puntos y así poder ganar esta insignia debes presentar todos tus trabajos y actividades
+                en la fecha estimada para ello o antes. Si presentas un trabajo o actividad el día de entrega se sumarán
+                5 puntos para la obtención de esta insignia, si lo entregas antes se sumarán 10 puntos, y si por el
+                contrario lo entregas después se restará 5 puntos.
+                <br><br>
+                Esto es todo lo que debes saber para lograr este reconocimiento.
+                <br><br>
+                ¡Ánimo!, demuéstrale a tus compañeros que puedes obtener todas las insignias.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fin, Modal 1 -->
+
+  <!-- Inicio, Modal 2 -->
+  <div class="modal fade" id="conquistadorModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Conquistador</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="inner">
+            <img src="modules/insignias/img/conquistador.png" class="insignias_img">
+            <br><br><br>
+          </div>
+          <div class="row mt-2">
+            <div class="col-6">
+              <h4>Descripción</h4>
+              <br>
+              <p>
+                Esta insignia es un reconocimiento a todos los estudiantes que logren superar al promedio de la clase,
+                otorgada sólo a aquellos que hagan bien sus trabajos y actividades, superando el promedio de notas de la
+                clase de forma reiterativa.
+                <br><br>
+                Para ganar esta insignia debes completar un total de 100 puntos en el atributo de <b>conquista</b>.
+                <br><br>
+                Actualmente tienes <span class="puntos_obtenidos">XX</span> puntos y te faltan <span
+                  class="puntos_restantes">XX</span> para obtener esta insignia.
+              </p>
+            </div>
+            <div class="col-6">
+              <h4>¿Como ganar más puntos?</h4>
+              <br>
+              <p>
+                Para obtener más puntos y así poder ganar esta insignia debes superar el promedio de notas de tu clase
+                en un trabajo o actividad. Si obtienes una nota superior a la del promedio en un trabajo o actividad
+                obtendrás 20 puntos en el atributo de conquista, si la nota obtenida es igual a la del promedio ganaras
+                10 puntos, y si por el contrario tu nota es inferior a la del promedio de la clase se restarán 5 puntos
+                del total para obtener esta insignia.
+                <br><br>
+                Esto es todo lo que debes saber para lograr este reconocimiento.
+                <br><br>
+                ¡Ánimo!, demuéstrale a tus compañeros que puedes obtener todas las insignias.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fin, Modal 2 -->
+
+  <!-- Inicio, Modal 3 -->
+  <div class="modal fade" id="brillanteModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Brillante</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="inner">
+            <img src="modules/insignias/img/brillante.png" class="insignias_img">
+            <br><br><br>
+          </div>
+          <div class="row mt-2">
+            <div class="col-6">
+              <h4>Descripción</h4>
+              <br>
+              <p>
+                Esta insignia es un reconocimiento a nuestros estudiantes más destacados, otorgada sólo a aquellos que
+                obtengan la mejor nota posible en sus trabajos o actividades.
+                <br><br>
+                Para ganar esta insignia debes completar un total de 100 puntos en el atributo de <b>brillantez</b>.
+                <br><br>
+                Actualmente tienes <span class="puntos_obtenidos">XX</span> puntos y te faltan <span
+                  class="puntos_restantes">XX</span> para obtener esta insignia.
+              </p>
+            </div>
+            <div class="col-6">
+              <h4>¿Como ganar más puntos?</h4>
+              <br>
+              <p>
+                Para obtener más puntos y así poder ganar esta insignia debes obtener la mejor nota posible en todos tus
+                trabajos y actividades. Siempre que obtengas la mayor nota posible en un trabajo o actividad realizado
+                sumaras 10 puntos en el atributo de brillantes.
+                <br><br>
+                Debes ser constante a la hora de sacar la mejor nota para poder ganar esta insignia. Solamente necesitas
+                completar el total de puntos necesarios para obtener esta insignia, dado que no hay ninguna acción que
+                reste puntos en el atributo de brillantez.
+                <br><br>
+                Esto es todo lo que debes saber para lograr este reconocimiento.
+                <br><br>
+                ¡Ánimo!, demuéstrale a tus compañeros que puedes obtener todas las insignias.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fin, Modal 3 -->
+
+  <!-- Inicio, Modal 4 -->
+  <div class="modal fade" id="estudiosoModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Estudioso</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="inner">
+            <img src="modules/insignias/img/estudioso.png" class="insignias_img">
+            <br><br><br>
+          </div>
+          <div class="row mt-2">
+            <div class="col-6">
+              <h4>Descripcion</h4>
+              <br>
+              <p>
+                Esta insignia es un reconocimiento a los estudiantes que realicen la mayor cantidad de avance posible en
+                el curso, otorgada sólo a aquellos estudiantes que completen la clase o curso en su totalidad.
+                <br><br>
+                Para ganar esta insignia debes completar un total de 100 puntos en el atributo de <b>estudiante</b>.
+                <br><br>
+                Actualmente tienes <span class="puntos_obtenidos">XX</span> puntos y te faltan <span
+                  class="puntos_restantes">XX</span> para obtener esta insignia.
+              </p>
+            </div>
+            <div class="col-6">
+              <h4>¿Como ganar más puntos?</h4>
+              <br>
+              <p>
+                Para obtener más puntos y así poder ganar esta insignia debes realizar todas las lecturas, ver todos los
+                vídeos, presentar todos tus trabajos y actividades, entre otros, para completar el porcentaje de avance
+                en el curso. Los puntos de esta insignia están directamente relacionados con el porcentaje de avance en
+                el curso, por lo que a medida que avanzas en el curso realizando todo el recorrido que está establecido
+                obtendrás más puntos en el atributo de estudiante.
+                <br><br>
+                Esto es todo lo que debes saber para lograr este reconocimiento.
+                <br><br>
+                ¡Ánimo!, demuéstrale a tus compañeros que puedes obtener todas las insignias.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fin, Modal 4 -->
+
+  <!-- Fin insignias, Modals -->
 </body>
 
 </html>
