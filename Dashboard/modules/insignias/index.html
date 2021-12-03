@@ -69,15 +69,119 @@
   </div>
   <!-- /.row -->
 
+  <!-- jQuery -->
+  <script src="../../plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JS -->
   <script src="ejemplo.js"></script>
   <script src="main.js"></script>
-  <script src="ManageViewOrHideNode.js"></script>
 
   <!-- Inicio insignias, Modals -->
 
   <!-- Inicio, Modal 1 -->
-  <div class="modal fade" id="puntualModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true">
+  <div class="modal fade" id="puntualModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Puntual</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="inner">
+            <img src="img/puntual.png" class="insignias_img">
+            <br><br><br>
+          </div>
+          <div class="row mt-2">
+            <div class="col-6">
+              <h4>Descripción</h4>
+              <br>
+              <p>
+                Esta insignia es un reconocimiento a la puntualidad de nuestros estudiantes, otorgada sólo a aquellos
+                que entreguen todos sus trabajos y realicen todas las actividades a tiempo.
+                <br><br>
+                Para ganar esta insignia debes completar un total de 100 puntos en el atributo de <b>puntualidad</b>.
+                <br><br>
+                Actualmente tienes XX puntos y te faltan XX para obtener esta insignia.
+              </p>
+            </div>
+            <div class="col-6">
+              <h4>¿Como ganar más puntos?</h4>
+              <br>
+              <p>
+                Para obtener más puntos y así poder ganar esta insignia debes presentar todos tus trabajos y actividades
+                en la fecha estimada para ello o antes. Si presentas un trabajo o actividad el día de entrega se sumarán
+                5 puntos para la obtención de esta insignia, si lo entregas antes se sumarán 10 puntos, y si por el
+                contrario lo entregas después se restará 5 puntos.
+                <br><br>
+                Esto es todo lo que debes saber para lograr este reconocimiento.
+                <br><br>
+                ¡Ánimo!, demuéstrale a tus compañeros que puedes obtener todas las insignias.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fin, Modal 1 -->
+
+  <!-- Inicio, Modal 2 -->
+  <div class="modal fade" id="conquistadorModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Conquistador</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="inner">
+            <img src="img/conquistador.png" class="insignias_img">
+            <br><br><br>
+          </div>
+          <div class="row mt-2">
+            <div class="col-6">
+              <h4>Descripción</h4>
+              <br>
+              <p>
+                Esta insignia es un reconocimiento a todos los estudiantes que logren superar al promedio de la clase,
+                otorgada sólo a aquellos que hagan bien sus trabajos y actividades, superando el promedio de notas de la
+                clase de forma reiterativa.
+                <br><br>
+                Para ganar esta insignia debes completar un total de 100 puntos en el atributo de <b>conquista</b>.
+                <br><br>
+                Actualmente tienes XX puntos y te faltan XX para obtener esta insignia.
+              </p>
+            </div>
+            <div class="col-6">
+              <h4>¿Como ganar más puntos?</h4>
+              <br>
+              <p>
+                Para obtener más puntos y así poder ganar esta insignia debes superar el promedio de notas de tu clase
+                en un trabajo o actividad. Si obtienes una nota superior a la del promedio en un trabajo o actividad
+                obtendrás 20 puntos en el atributo de conquista, si la nota obtenida es igual a la del promedio ganaras
+                10 puntos, y si por el contrario tu nota es inferior a la del promedio de la clase se restarán 5 puntos
+                del total para obtener esta insignia.
+                <br><br>
+                Esto es todo lo que debes saber para lograr este reconocimiento.
+                <br><br>
+                ¡Ánimo!, demuéstrale a tus compañeros que puedes obtener todas las insignias.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fin, Modal 2 -->
+
+  <!-- Inicio, Modal 3 -->
+  <div class="modal fade" id="brillanteModal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -124,22 +228,21 @@
       </div>
     </div>
   </div>
-  <!-- Fin, Modal 1-->
+  <!-- Fin, Modal 3 -->
 
-  <!-- Inicio, Modal 2 -->
-  <div class="modal fade" id="conquistadorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true">
+  <!-- Inicio, Modal 4 -->
+  <div class="modal fade" id="estudiosoModal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalCenterTitle">Conquistador</h5>
+          <h5 class="modal-title">Puntual</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
           <div class="inner">
-            <img src="img/conquistador.png" class="insignias_img">
+            <img src="img/puntual.png" class="insignias_img">
             <br><br><br>
           </div>
           <div class="row mt-2">
@@ -175,7 +278,7 @@
       </div>
     </div>
   </div>
-  <!-- Fin, Modal 2-->
+  <!-- Fin, Modal 4 -->
 
   <!-- Fin insignias, Modals -->
 </body>
