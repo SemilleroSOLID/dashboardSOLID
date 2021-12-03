@@ -5,6 +5,9 @@
   width: 12vh;height: 13vh;
 }
 
+.btnModal {
+  cursor: pointer;
+}
 
 .modalContainer {
   display: none;
