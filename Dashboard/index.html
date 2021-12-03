@@ -27,8 +27,6 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
-  <!--insignias-->
-  <link rel="stylesheet" href="styles/insignias.css">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -167,79 +165,11 @@
       <section class="content mt-4">
         <div class="container-fluid">
           <!-- Small boxes (Stat box) -->
-          <!--insignias tarjetas-->
+          <!-- INSIGNIAS tarjetas-->
           <div class="row">
-            <div class="col-lg-2 col-7 btnModal" data-toggle="modal" data-target="#puntualModal">
-              <div class="small-box bg-info">
-                <div class="inner">
-                  <img src="img/puntual.png" class="insignias_img">
-                </div>
-                <div class="row">
-                  <a href="#" class="col-10 small-box-footer"
-                    style="text-align: center;font-size:3vh;color: blanchedalmond;">Puntual</a>
-                </div>
-              </div>
-              <!-- </button>-->
-            </div>
-
-            <!-- ./col -->
-            <div class="col-lg-2 col-6" id="btnModal">
-              <!-- small box -->
-              <div class="small-box bg-success" data-toggle="modal" data-target="#conquistadorModal">
-                <div class="inner">
-                  <img src="img/conquistador.png" class="insignias_img">
-                </div>
-                <div class="row">
-                  <a href="#" class="col-10 small-box-footer"
-                    style="text-align: center;font-size:3vh;color: blanchedalmond;">Conquistador</a>
-
-                  <button type="button" class="col-2" style="text-align: center"><i class="fas fa fa-plus-square"
-                      style="font-size:2vh;color:black;"></i></button>
-                </div>
-              </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-2 col-6" id="btnModal">
-              <!-- small box -->
-              <div class="small-box bg-warning">
-                <div class="inner">
-                  <img src="img/brillante.png" class="insignias_img">
-                </div>
-                <div class="row">
-                  <a href="#" class="col-10 small-box-footer"
-                    style="text-align: center;font-size:3vh;color: blanchedalmond;">Brillante</a>
-                </div>
-              </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-2 col-6" id="btnModal">
-              <!-- small box -->
-              <div class="small-box bg-danger">
-                <div class="inner">
-                  <img src="img/estudioso.png" class="insignias_img">
-                </div>
-                <div class="row">
-                  <a href="#" class="col-10 small-box-footer"
-                    style="text-align: center;font-size:3vh;color: blanchedalmond;">Estudioso</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-7 small-box text-dark">
-              <h1 style="text-align: center;">Porcentaje</h1>
-              <!--<canvas height="90%" id="myChart"></canvas>-->
-              <div style="text-align: center;">
-                <h1>80%</h1>
-              </div>
-              <div class="" style="text-align: center;">
-                <progress id="html5" max="100" value="91"></progress>
-                <span></span>
-              </div>
-              <!--<p>los datos aquí contenidos son aproximados</p>-->
-            </div>
-            <!-- ./col -->
+            <iframe class="col-lg-12" src="modules/insignias/index.html"></iframe>
           </div>
-          <!-- /.row -->
+          <!-- /.row INSIGNIAS -->
           <!-- Main row, GRAFO -->
           <div class="row">
             <!-- Left col -->
@@ -247,18 +177,8 @@
               <!-- Custom tabs (Charts with tabs)-->
               <div class="card">
                 <div class="card-body">
-                  <div class="tab-content p-0">
-                    <!-- Morris chart - Sales -->
-                    <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 500px;">
-                      <!--  <canvas id="revenue-chart-canvas" height="300" style="height: 500px;" ></canvas>
-                     -->
-                      <iframe id="viewport" class="col-lg-12" style="height: 500px;"
-                        src="modules/grafo/index.html"></iframe>
-                    </div>
-                    <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 500px;">
-                      <canvas id="sales-chart-canvas" height="300" style="height: 500px;"></canvas>
-                    </div>
-                  </div>
+                  <iframe id="viewport" class="col-lg-12" style="height: 500px;"
+                    src="modules/grafo/index.html"></iframe>
                 </div><!-- /.card-body -->
               </div>
               <!-- /.card -->
