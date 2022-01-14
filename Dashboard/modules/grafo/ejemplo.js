@@ -1,3 +1,4 @@
+// Métodos para consumir la API
 
 var json_ejemplo={} ;
 
@@ -26,5 +27,4 @@ function Get(){
 function PonerTitulo(name){
   txt = document.getElementById("title");
   txt.innerHTML=name;
-
 }

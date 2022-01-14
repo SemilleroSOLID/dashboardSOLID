@@ -1,3 +1,5 @@
+// Controlador de la vista.
+
 function obtenerColor(porcentaje) {
   let color = "";
 
@@ -75,9 +77,10 @@ function InitMain() {
     edges: edges,
   };
 
+  // https://visjs.github.io/vis-network/docs/network/
   var options = {
-    width: "1450px",
-    height: "450px",
+    width: "1450px", // Podrián llegar desde el archivo de configuración.
+    height: "450px", // Podrián llegar desde el archivo de configuración.
     edges: {
       smooth: { type: "straightCross" },
     },
@@ -130,6 +133,6 @@ function InitMain() {
     network.setOptions({ physics: false });
   });
 
+  // Mostrar y/o ocultar nodos.
   InitManageViewOrHideNode(network,nodes,edges);
-
 }
